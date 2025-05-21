@@ -1,0 +1,110 @@
+body {
+    font-family: Arial;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .controls {
+    width: 20%;
+  }
+  
+  .plots {
+    width: 75%;
+  }
+  
+  .plot {
+    margin-top: 20px;
+  }
+
+  .range-block {
+    margin-bottom: 15px;
+  }
+  
+  .range-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .page-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .page-header h2 {
+    font-size: 2rem;
+    color: #4a148c;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .page-header .subheading {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    margin-top: 0;
+  }
+
+  /* Beautified controls panel */
+.beautified-controls {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Each control block */
+  .control-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Input + label alignment */
+  .control-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  
+  .control-group select,
+  .control-group input[type="number"],
+  .control-group button {
+    width: 100%;
+    padding: 6px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Range sliders */
+  .range-block {
+    margin-bottom: 15px;
+  }
+  
+  .range-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  .slider-min-val,
+  .slider-max-val {
+    width: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  .slider-value-display {
+    font-size: 0.9em;
+    color: #444;
+    margin-left: 8px;
+    margin-top: 4px;
+  }

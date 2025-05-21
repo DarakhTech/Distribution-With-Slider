@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Distribution With Slider</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-2.27.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
+</head>
+<body>
+    <div class="page-header">
+        <h2>Distribution With Slider</h2>
+        <p class="subheading">Calculating Probabilities for Standard Distributions</p>
+    </div>
+  <div class="container">
+    <div class="controls beautified-controls">
+      <fieldset>
+        <legend>Distribution Controls</legend>
+        <div class="control-group">
+          <label for="distributionType">Type of Distribution:</label>
+          <select id="distributionType" onchange="updateDistributionOptions()">
+            <option value="continuous">Continuous</option>
+            <option value="discrete">Discrete</option>
+          </select>
+        </div>
+      
+        <div class="control-group">
+          <label for="distribution">Distribution to Display:</label>
+          <select id="distribution" onchange="updateInputFields()"></select>
+        </div>
+      
+        <div id="parameterInputs" class="control-group"></div>
+      
+        <div class="control-group">
+          <label>Range:</label>
+      
+          <div class="range-block">
+            <div class="range-line">
+              <label for="minRange">In:</label>
+              <span class="slider-min-val">-4</span>
+              <input type="range" id="minRange" min="-4" max="10" value="-2" step="0.1" oninput="syncInput('min')" title="Minimum value of range" autocomplete="off">
+              <input type="number" id="minInput" min="-4" max="10" value="-2" step="0.1" oninput="syncSlider('min')" title="Minimum value input" autocomplete="off">
+              <span class="slider-max-val">10</span>
+            </div>
+          </div>
+      
+          <div class="range-block">
+            <div class="range-line">
+              <label for="maxRange">Out:</label>
+              <span class="slider-min-val">-4</span>
+              <input type="range" id="maxRange" min="-4" max="10" value="2" step="0.1" oninput="syncInput('max')" title="Maximum value of range" autocomplete="off">
+              <input type="number" id="maxInput" min="-4" max="10" value="2" step="0.1" oninput="syncSlider('max')" title="Maximum value input" autocomplete="off">
+              <span class="slider-max-val">10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="pRange">Probability (p):</label>
+          <div class="range-block">
+            <div class="range-line">
+              <label for="pRange">p:</label>
+              <span class="slider-min-val">0</span>
+              <input type="range" id="pRange" min="0" max="1" value="0.5" step="0.01" oninput="syncInput('p')" title="Probability p" autocomplete="off">
+              <input type="number" id="pInput" min="0" max="1" value="0.5" step="0.01" oninput="syncSlider('p')" title="Probability p input" autocomplete="off">
+              <span class="slider-max-val">1</span>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <hr style="margin: 1.5em 0;">
+      <div id="error-message" aria-live="polite" style="color: #b00; min-height: 1.5em;"></div>
+    </div>
+
+    <div class="plots">
+      <div id="mainPlot" class="plot" style="height: 300px;"></div>
+      <div id="histogram" class="plot" style="width: 45%; display: inline-block;"></div>
+      <div id="piechart" class="plot" style="width: 45%; display: inline-block;"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+ 
+</body>
+</html>
